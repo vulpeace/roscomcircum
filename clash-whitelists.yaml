@@ -71,7 +71,7 @@ rule-providers:
     type: http
     behavior: domain
     format: yaml
-    url: 
+    url: https://github.com/vulpeace/clashing-with-whitelists/releases/latest/download/geosite-cheburnet.yaml
     interval: 86400
     proxy: PROXY
 rules:
