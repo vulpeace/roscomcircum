@@ -4,7 +4,11 @@
 
 ### Перед началом прочтения – у вас должна быть ссылка на удаленный конфиг (подписку) для Clash. Обычно такой вариант подразумевает минимальную необходимость донастройки для конечного пользователя.
 
-Для обхода белых списков можно воспользоваться следующей ссылкой: ``` https://github.com/vulpeace/clashing-with-whitelists/releases/latest/download/clash-whitelist.yaml ```
+Для обхода белых списков можно использовать подписку по следующей ссылке:
+
+``` https://raw.githubusercontent.com/vulpeace/roscomcircum/refs/heads/clash/clash-whitelists.yaml ```
+
+Построено на основе репозиториев [zieng2/wl](https://github.com/zieng2/wl) и [jinndi/geosite-cheburnet](https://github.com/jinndi/geosite-cheburnet).
 
 ===
 
