@@ -34,7 +34,7 @@ dns:
 proxy-providers:
   WHITELISTS:
     type: http
-    url: "https://raw.githubusercontent.com/zieng2/wl/refs/heads/main/vless_lite.txt"
+    url: "https://gitverse.ru/api/repos/zieng2/wl/raw/branch/master/list_lite.txt"
     interval: 3600
     proxy: DIRECT
     header:
