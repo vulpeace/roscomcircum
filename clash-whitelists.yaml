@@ -1,4 +1,3 @@
----
 mode: rule
 log-level: warning
 ipv6: false
@@ -27,56 +26,20 @@ dns:
   listen: 0.0.0.0:1183
   ipv6: false
   default-nameserver:
-  - dhcp://system
+  - system://dhcp
   nameserver:
   - https://1.1.1.1/dns-query#PROXY
   - https://8.8.8.8/dns-query#PROXY
 proxy-providers:
   WHITELISTS:
     type: http
-    url: "https://gitverse.ru/api/repos/zieng2/wl/raw/branch/master/list_lite.txt"
-    interval: 3600
+    url: https://gitverse.ru/zieng2/wl/content/master/list_universal.txt
+    interval: 300
     proxy: DIRECT
-    header:
-      User-Agent:
-      - "Clash"
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-      timeout: 5000
-      lazy: true
-      expected-status: 204
 proxy-groups:
   - name: PROXY
     type: select
     use:
       - WHITELISTS
-rule-providers:
-  geosite-private:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/private.mrs
-    interval: 86400
-    proxy: PROXY
-  geoip-private:
-    type: http
-    behavior: ipcidr
-    format: mrs
-    url: https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/private.mrs
-    interval: 86400
-    proxy: PROXY
-  geosite-cheburnet:
-    type: http
-    behavior: domain
-    format: yaml
-    url: https://raw.githubusercontent.com/vulpeace/roscomcircum/refs/heads/clash/geosite-cheburnet.yaml
-    interval: 86400
-    proxy: PROXY
 rules:
-- AND,((NETWORK,udp),(DST-PORT,443)),REJECT
-- RULE-SET,geosite-private,DIRECT
-- RULE-SET,geoip-private,DIRECT
-- RULE-SET,geosite-cheburnet,DIRECT
 - MATCH,PROXY
